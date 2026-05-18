@@ -9,7 +9,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 # =========================
 MAX_LEN = 200
 
-st.set_page_config(page_title="IMDB Sentiment Analyzer", page_icon="🎬")
+st.set_page_config(page_title="IMDB Sentiment Analyzer")
 
 st.title("🎬 IMDB Sentiment Analysis")
 st.write("Enter a movie review and choose a model to predict sentiment.")
@@ -53,7 +53,7 @@ if st.button("Predict"):
         padded = pad_sequences(seq, maxlen=MAX_LEN)
 
         prob = model.predict(padded)[0][0]
-        pred = "Positive 😊" if prob > 0.5 else "Negative 😡"
+        pred = "Positive" if prob > 0.5 else "Negative"
 
         st.subheader("Result")
         st.write(f"Prediction: {pred}")
