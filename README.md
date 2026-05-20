@@ -1,44 +1,51 @@
-# IMDB Sentiment Analysis Project (RNN vs LSTM)
+# IMDB Sentiment Analysis (RNN vs LSTM)
 
-## Overview
-This project performs sentiment analysis on the IMDB movie review dataset using deep learning models, including:
-
-- Simple RNN
-- LSTM
-
-The goal is to classify reviews as **positive (1)** or **negative (0)** and compare model performance.
+> NLP sentiment classification system comparing RNN and LSTM on IMDB reviews.
 
 ---
 
-## Dataset
-- IMDB Large Movie Review Dataset
-- 50,000 reviews
-- Binary classification:
-  - Positive = 1
-  - Negative = 0
+## 🚀 Overview
 
-### Split
+This project builds an end-to-end sentiment analysis system:
+
+- Positive / Negative classification
+- RNN vs LSTM comparison
+- Streamlit interactive demo
+
+Goal: demonstrate a **modular NLP pipeline + model comparison framework**.
+
+---
+
+## 📊 Dataset
+
+- IMDB Large Movie Review Dataset
+- 50,000 labeled reviews
+- Binary classification task
+
+Split:
 - Train: 80%
 - Validation: 10%
 - Test: 10%
 
 ---
 
-## Models
+## 🧠 Models
 
-### RNN
-- Embedding layer (128 dim)
+### 🔹 RNN
+- Embedding layer (128-dim)
 - SimpleRNN (64 units)
-- Dense layers + Dropout
+- Dense + Dropout
 
-### LSTM
-- Embedding layer (128 dim)
+### 🔹 LSTM
+- Embedding layer (128-dim)
 - LSTM (128 units)
-- Dense layers + Dropout + recurrent dropout
+- Dropout + recurrent dropout
+- Dense output layer
 
 ---
 
-## Training Config
+## ⚙️ Training Config
+
 - Loss: Binary Crossentropy
 - Optimizer: Adam
 - Batch size: 128
@@ -46,107 +53,111 @@ The goal is to classify reviews as **positive (1)** or **negative (0)** and comp
 
 ---
 
-## Evaluation Metrics
-- Accuracy
-- Precision / Recall / F1-score
-- ROC-AUC
-- Confusion Matrix
-- WordCloud (Positive / Negative)
+## 🏗 System Design
+
+```
+Streamlit UI
+   ↓
+Text Preprocessing
+   ↓
+Model Selector (RNN / LSTM)
+   ↓
+Embedding Layer
+   ↓
+Neural Network Inference
+   ↓
+Prediction Output
+```
+
+Key idea: modular NLP system with interchangeable models.
 
 ---
 
-## Results Summary
+## 📊 Results
 
 | Model | Accuracy | AUC |
 |------|---------|-----|
 | RNN  | ~0.81   | ~0.88 |
 | LSTM | ~0.87   | ~0.93 |
 
----
-
-## Visualizations
-- Confusion Matrix Heatmaps
-- ROC Curves
-- WordCloud (Positive vs Negative)
-
-### LSTM Screenshots
-Here are key screenshots from the LSTM model:
-
-![LSTM Screenshot 1](assets/LSTM_confusion_matrix.png)
-![LSTM Screenshot 2](assets/LSTM_negative_wordcloud.png)
-![LSTM Screenshot 3](assets/LSTM_positive_wordcloud.png)
-![LSTM Screenshot 4](assets/LSTM_roc.png)
-
-Stored in:
-```
-assets/
-```
-- Confusion Matrix Heatmaps
-- ROC Curves
-- WordCloud (Positive vs Negative)
-
-Stored in:
-```
-assets/
-```
+Insight: LSTM better captures long-term dependencies.
 
 ---
 
-## Streamlit App
-Run locally:
-```bash
-streamlit run app.py
-```
+## 🎯 Demo (Visualizations)
 
-Features:
-- Input movie review
-- Choose model (RNN / LSTM)
-- Real-time prediction
+### Confusion Matrix
+![cm](assets/LSTM_confusion_matrix.png)
+
+### ROC Curve
+![roc](assets/LSTM_roc.png)
+
+### Negative WordCloud
+![neg](assets/LSTM_negative_wordcloud.png)
+
+### Positive WordCloud
+![pos](assets/LSTM_positive_wordcloud.png)
 
 ---
 
-## Project Structure
+## 📁 Project Structure
+
 ```
 imdb-nlp-project/
-├── data/
-├── models/
-├── src/
-│   ├── train.py
-│   ├── evaluate.py
-├── assets/
+│
 ├── app.py
 ├── requirements.txt
-└── README.md
+│
+├── data/
+├── models/
+│
+├── assets/
+│   ├── LSTM_confusion_matrix.png
+│   ├── LSTM_negative_wordcloud.png
+│   ├── LSTM_positive_wordcloud.png
+│   └── LSTM_roc.png
+│
+└── src/
+    ├── train.py
+    ├── evaluate.py
+    ├── preprocess.py
+    └── model.py
 ```
 
 ---
 
-## How to Run
+## ▶️ Usage
 
-### 1. Train model
 ```bash
 python src/train.py
-```
-
-### 2. Evaluate model
-```bash
 python src/evaluate.py
-```
-
-### 3. Run web app
-```bash
 streamlit run app.py
 ```
 
 ---
 
-## Key Takeaways
-- LSTM significantly outperforms RNN
-- RNN suffers from long-term dependency issues
-- WordCloud helps interpret sentiment patterns
+## 🧩 Key Concepts
+
+- Text preprocessing (tokenization, padding)
+- Word embeddings
+- RNN vs LSTM comparison
+- Sequence modeling
+- Evaluation metrics (AUC, ROC)
+- Interpretability via WordCloud
 
 ---
 
-## Author
-HubertKuo
+## 🔮 Future Work
 
+- Transformer model (BERT)
+- Better preprocessing (stopwords, lemmatization)
+- Hyperparameter tuning (Optuna)
+- FastAPI deployment
+- Real-time sentiment dashboard
+
+---
+
+## 👤 Author
+
+Hubert Kuo  
+Focus: AI Systems / Machine Learning / NLP
