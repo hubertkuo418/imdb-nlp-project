@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 
 This project builds an end-to-end sentiment analysis system:
 
@@ -16,7 +16,7 @@ Goal: demonstrate a **modular NLP pipeline + model comparison framework**.
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 - IMDB Large Movie Review Dataset
 - 50,000 labeled reviews
@@ -29,14 +29,14 @@ Split:
 
 ---
 
-## 🧠 Models
+## Models
 
-### 🔹 RNN
+### RNN
 - Embedding layer (128-dim)
 - SimpleRNN (64 units)
 - Dense + Dropout
 
-### 🔹 LSTM
+### LSTM
 - Embedding layer (128-dim)
 - LSTM (128 units)
 - Dropout + recurrent dropout
@@ -44,7 +44,7 @@ Split:
 
 ---
 
-## ⚙️ Training Config
+## Training Config
 
 - Loss: Binary Crossentropy
 - Optimizer: Adam
@@ -53,7 +53,7 @@ Split:
 
 ---
 
-## 🏗 System Design
+## System Design
 
 ```
 Streamlit UI
@@ -73,7 +73,7 @@ Key idea: modular NLP system with interchangeable models.
 
 ---
 
-## 📊 Results
+## Results
 
 | Model | Accuracy | AUC |
 |------|---------|-----|
@@ -84,7 +84,7 @@ Insight: LSTM better captures long-term dependencies.
 
 ---
 
-## 🎯 Demo (Visualizations)
+## Demo (Visualizations)
 
 ### Confusion Matrix
 ![cm](assets/LSTM_confusion_matrix.png)
@@ -100,7 +100,7 @@ Insight: LSTM better captures long-term dependencies.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 imdb-nlp-project/
@@ -126,7 +126,7 @@ imdb-nlp-project/
 
 ---
 
-## ▶️ Usage
+## Usage
 
 ```bash
 python src/train.py
@@ -136,7 +136,7 @@ streamlit run app.py
 
 ---
 
-## 🧩 Key Concepts
+## Key Concepts
 
 - Text preprocessing (tokenization, padding)
 - Word embeddings
@@ -147,7 +147,7 @@ streamlit run app.py
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 - Transformer model (BERT)
 - Better preprocessing (stopwords, lemmatization)
@@ -157,7 +157,7 @@ streamlit run app.py
 
 ---
 
-## 👤 Author
+## Author
 
 Hubert Kuo  
 Focus: AI Systems / Machine Learning / NLP
